@@ -5,6 +5,8 @@
 def degree(a,b):
     if b < 1:
         return 1
+    # if b = 1:       еще один вариант условия
+    #     return a
     return a*degree(a,b-1)
 
 a = int(input('Num a = '))

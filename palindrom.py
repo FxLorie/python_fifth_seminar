@@ -1,12 +1,21 @@
 ## Задача на палиндром через срез
 
+# def pal(n):
+#     if len(n) == 0:
+#         return ''
+#     return n[-1:] + pal(n[:-1])
+# n = 'довод'
+# print(pal(n))
+# if n == pal(n):
+#     print('yes')
+# else: print('no')
+
+## 2 вариант с семинара
 def pal(n):
-    if len(n) == 0:
-        return ''
-    return n[-1:] + pal(n[:-1])
+    if len(n) in [1,2]:         ## проверяем длину слова, если она равна 1 или 2, 
+        return n[0] == n[-1]    ## далее возвращаем сравнение первой и последней буквы true/false
+    return n[0] == n[-1] and pal(n[1:-1])   ## иначе возвращаем то же сравнение, но при условии, что оно равно рекурсивному сравнению
+
 n = 'довод'
 print(pal(n))
 
-if n == pal(n):
-    print('yes')
-else: print('no')
